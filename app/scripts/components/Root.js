@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default class WordListing extends React.Component {
+export default class Root extends React.Component {
   render () {
     return (
-      <div>
+      <div className='Root'>
         MAIN compo
       </div>
     )

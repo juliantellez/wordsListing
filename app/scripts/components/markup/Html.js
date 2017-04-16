@@ -21,7 +21,7 @@ export default class Html extends React.Component {
           <meta name='keywords' content={keywords} />
         </head>
         <body>
-          <div id='main' dangerouslySetInnerHTML={{__html: this.props.children}} />
+          <main id='main' dangerouslySetInnerHTML={{__html: this.props.children}} />
           <script src='static/client.js'/>
         </body>
       </html>

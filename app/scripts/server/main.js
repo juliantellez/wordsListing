@@ -5,7 +5,7 @@ import React from 'react'
 import ReactDomServer from 'react-dom/server'
 
 import Html from 'src/components/markup/Html'
-import WordListing from 'src/components/WordListing'
+import Root from 'src/components/Root'
 
 import config from 'src/config'
 
@@ -27,7 +27,7 @@ const markup = content => (
 )
 
 app.get('/', function (req, res) {
-  const document = toMarkup(markup(toString(<WordListing />)))
+  const document = toMarkup(markup(toString(<Root />)))
   res.send(document)
 })
 
