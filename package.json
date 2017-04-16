@@ -4,20 +4,38 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "start": "npm run build && node build/server",
+    "build": "npm run build:server && npm run build:client",
+    "build:server": "webpack --config scripts/webpack/server.config.js",
+    "build:client": "webpack --config scripts/webpack/client.config.js",
     "test": "mocha --opts ./test/.mocharc"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-module-resolver": "^2.5.0",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-node6": "^11.0.0",
-    "babel-preset-stage-0": "^6.22.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^0.28.0",
     "eslint": "^3.15.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "immutable": "^3.8.1",
+    "import-glob": "^1.5.0",
     "mocha": "^3.2.0",
+    "node-sass": "^4.5.2",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
     "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "express": "^4.15.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
   }
 }

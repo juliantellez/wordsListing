@@ -1,17 +1,17 @@
 const path = require('path')
 
 const APP_PORT = 8080
-const BASE_URL = '/'
 
 const ENV = process.env.NODE_ENV || 'development'
 
-const SRC = path.join(__dirname, 'src')
+const SRC = path.join(__dirname, 'app')
 const DEST = path.join(__dirname, 'build')
+const STATIC = path.join(DEST, '/static')
 
 module.exports = {
   APP_PORT,
-  BASE_URL,
   ENV,
   SRC,
   DEST,
+  STATIC,
 }
