@@ -1,8 +1,9 @@
 {
-  "name": "quick-starter",
+  "name": "word-listing-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "license": "ISC",
+  "author": "Julian Tellez",
+  "description": "Application that reads paragraphs and creates a list of all the words entered",
   "scripts": {
     "start": "npm run build && node build/server",
     "build": "npm run build:server && npm run build:client",
@@ -10,8 +11,6 @@
     "build:client": "webpack --config scripts/webpack/client.config.js",
     "test": "mocha --opts ./test/.mocharc"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
     "babel-core": "^6.23.1",
@@ -22,20 +21,30 @@
     "babel-preset-node6": "^11.0.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "chai": "^3.5.0",
+    "chai-react": "^3.0.1",
     "css-loader": "^0.28.0",
+    "enzyme": "^2.8.2",
     "eslint": "^3.15.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "immutable": "^3.8.1",
     "import-glob": "^1.5.0",
+    "lodash": "^4.17.4",
     "mocha": "^3.2.0",
     "node-sass": "^4.5.2",
+    "normalize.css": "^6.0.0",
+    "prop-types": "^15.5.8",
+    "react-addons-test-utils": "^15.5.1",
     "sass-loader": "^6.0.3",
+    "sinon": "^2.1.0",
+    "sinon-chai": "^2.9.0",
     "style-loader": "^0.16.1",
     "webpack": "^2.2.1"
   },
   "dependencies": {
     "express": "^4.15.2",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "redux": "^3.6.0"
   }
 }
