@@ -1,11 +1,12 @@
 /* eslint-disable max-len */
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export default class Html extends React.Component {
   static propTypes = {
-    title: React.PropTypes.string,
-    description: React.PropTypes.string,
-    keywords: React.PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    keywords: PropTypes.string,
   }
 
   render () {
