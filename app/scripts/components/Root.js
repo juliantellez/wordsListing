@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import Header from './sections/Header'
 import Content from './sections/Content'
-import Footer from './sections/Footer'
+import Aside from './sections/Aside'
 
 import store from 'src/client/store'
 import actions from 'src/client/actions'
@@ -26,8 +26,8 @@ export default class Root extends React.Component {
     return (
       <div className='Root'>
         <Header inputLimits={[5, 500]} />
+        <Aside />
         <Content />
-        <Footer />
       </div>
     )
   }

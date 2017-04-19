@@ -7,6 +7,8 @@ import Input from '../forms/Input'
 import InputCard from '../helpers/InputCard'
 import TypeWriter from '../helpers/TypeWriter'
 
+import {wordsLength} from 'src/utils/tally'
+
 const cls = elem => `Header-${elem}`
 
 export default class Header extends React.Component {
@@ -28,16 +30,18 @@ export default class Header extends React.Component {
 
   _onValid = () => {
     const {store, actions} = this.context
+    const {wordsInput} = this.state
     store.dispatch(actions.error.removeError())
+    store.dispatch(actions.tally.setCounters(wordsInput))
   }
 
   _onInvalid = () => {
     const {inputLimits: [minLength, maxLength]} = this.props
-    const length = this._getWordsLength
+    const length = this._getWordsLength()
     let error
-    if (length() <= minLength) {
+    if (length <= minLength) {
       error = `Please insert a min of ${minLength} words`
-    } else if (length() > maxLength) {
+    } else if (length > maxLength) {
       error = `You have reached the maximum limit of ${maxLength} words`
     }
     this._setError(error)
@@ -49,13 +53,13 @@ export default class Header extends React.Component {
 
   _getWordsLength = () => {
     const {wordsInput} = this.state
-    return wordsInput ? wordsInput.split(' ').length : 0
+    return wordsLength(wordsInput)
   }
 
   _getInputLabel () {
     const {inputLimits: [minWords, maxWords]} = this.props
-    const length = this._getWordsLength
-    return length() <= minWords ? `${minWords} words min` : `${maxWords} words max`
+    const length = this._getWordsLength()
+    return length <= minWords ? `${minWords} words min` : `${maxWords} words max`
   }
 
   render () {

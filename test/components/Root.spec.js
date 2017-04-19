@@ -7,7 +7,7 @@ describe('<Root />', () => {
     expect(wrapper.exists()).to.equal(true)
     expect(wrapper.find('Header').exists()).to.equal(true)
     expect(wrapper.find('Content').exists()).to.equal(true)
-    expect(wrapper.find('Footer').exists()).to.equal(true)
+    expect(wrapper.find('Aside').exists()).to.equal(true)
 
     const inst = wrapper.instance()
     const store = inst.getChildContext().store

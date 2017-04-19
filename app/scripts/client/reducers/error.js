@@ -10,12 +10,10 @@ class _Error extends I.Record({
 
 const setError = ({content}) => new _Error({content})
 
-const notification = (state, action) => {
+export default (state, action) => {
   switch (action.type) {
     case SET_ERROR: return setError(action)
     case REMOVE_ERROR: return {}
     default: return {}
   }
 }
-
-export default notification

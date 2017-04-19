@@ -1,6 +1,5 @@
+import {wordsLength} from './tally'
 import Formsy from 'formsy-react'
-
-const wordsLength = value => value ? value.split(' ').length : 0
 
 function minWords (values, value, min) {
   const length = wordsLength(value)
