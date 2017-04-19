@@ -1,0 +1,9 @@
+.Root {
+  height: 100%;
+  margin: 10px;
+  @include media(desktop) {
+    margin: 20px;
+    margin: 0 auto;
+    max-width: $maxWidth;
+  }
+}

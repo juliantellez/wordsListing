@@ -1,0 +1,18 @@
+.InputCard {
+  &-preheader {
+    color: $color-gray
+  }
+  &-label {
+    font-size: 11px;
+    text-align: right;
+  }
+  &-title {
+    text-align: left;
+    font-size: 16px;
+    font-weight: 600;
+    color: $color-black;
+  }
+  &-header {
+    margin: 10px 0;
+  }
+}

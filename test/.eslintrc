@@ -11,6 +11,7 @@
     "react/no-multi-comp": 0
   },
   "globals": {
+    "React": true,
     "expect": true,
     "defer": true,
     "shallow": true
