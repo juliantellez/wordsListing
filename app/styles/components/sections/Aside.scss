@@ -1,0 +1,6 @@
+.Aside {
+  padding: 20px 5px;
+  @include media(desktop) {
+    padding: 20px 0;
+  }
+}
