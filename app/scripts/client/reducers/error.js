@@ -8,7 +8,10 @@ class _Error extends I.Record({
   content: '',
 }) {}
 
-const setError = ({content}) => new _Error({content})
+const setError = ({content}) => {
+  console.log(content, 'setError')
+  return new _Error({content})
+}
 
 export default (state, action) => {
   switch (action.type) {

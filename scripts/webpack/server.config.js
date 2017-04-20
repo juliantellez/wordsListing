@@ -3,13 +3,13 @@ const fs = require('fs')
 
 const config = require('../../appConfig')
 
-const nodeModules = fs.readdirSync("node_modules")
-.reduce(function(modules, module) {
+const nodeModules = fs.readdirSync('node_modules')
+.reduce(function (modules, module) {
   if (module === '.bin') {
     return modules
   }
 
-  modules[module] = "commonjs " + module
+  modules[module] = 'commonjs ' + module
   return modules
 }, {})
 
@@ -22,6 +22,7 @@ const webpackConfig = {
   output: {
     filename: '[name].js',
     path: config.DEST,
+    sourceMapFilename: '[file].map',
   },
   module: {
     rules: [
@@ -33,11 +34,11 @@ const webpackConfig = {
           options: {
             presets: [
             ['es2015', {modules: false}],
-            'stage-0',
-            'react',
+              'stage-0',
+              'react',
             ],
-          }
-        }
+          },
+        },
       },
     ],
   },

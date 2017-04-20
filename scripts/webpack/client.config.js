@@ -15,6 +15,7 @@ const webpackConfig = {
   output: {
     filename: '[name].js',
     path: config.DEST,
+    sourceMapFilename: '[file].map',
   },
   module: {
     rules: [
@@ -26,18 +27,18 @@ const webpackConfig = {
           options: {
             presets: [
             ['es2015', {modules: false}],
-            'stage-0',
-            'react',
+              'stage-0',
+              'react',
             ],
-          }
-        }
+          },
+        },
       },
       {
         enforce: 'pre',
         test: /\.scss$/,
         loader: 'import-glob',
       },
-      { 
+      {
         test: /\.scss$/,
         use: extractCss.extract({
           use: [
@@ -46,7 +47,7 @@ const webpackConfig = {
             {loader: 'sass-loader'},
           ],
           fallback: 'style-loader',
-        })
+        }),
       },
     ],
   },

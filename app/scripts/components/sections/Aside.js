@@ -19,7 +19,7 @@ export default class Aside extends React.Component {
 
   updateState = () => {
     const {tally, error} = this.context.store.getState()
-    this.setState({tally, error})
+    _.defer(() => this.setState({tally, error}))
   }
 
   componentWillMount () {
@@ -57,6 +57,7 @@ export default class Aside extends React.Component {
   _getContent () {
     const {error} = this.state
     if (!_.isEmpty(error)) {
+      console.log(error.content)
       return <ErrorCard error={error.content} />
     }
     return this._getWordsTally()

@@ -11,5 +11,11 @@ function maxWords (values, value, max) {
   return length < max
 }
 
+function noNumbers (values, value) {
+  const hasNumbers = new RegExp(/[0-9]/)
+  return !hasNumbers.test(value)
+}
+
 Formsy.addValidationRule('minWords', minWords)
 Formsy.addValidationRule('maxWords', maxWords)
+Formsy.addValidationRule('noNumbers', noNumbers)

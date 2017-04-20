@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import React from 'react'
 import PropTypes from 'prop-types'
 
@@ -44,7 +45,9 @@ export default class Header extends React.Component {
     } else if (length > maxLength) {
       error = `You have reached the maximum limit of ${maxLength} words`
     }
-    this._setError(error)
+    if (!_.isNil(error)) {
+      this._setError(error)
+    }
   }
 
   _onChange = currentValues => {
@@ -61,6 +64,8 @@ export default class Header extends React.Component {
     const length = this._getWordsLength()
     return length <= minWords ? `${minWords} words min` : `${maxWords} words max`
   }
+
+  _hasNumbersAlert = () => this._setError('Only words are allowed')
 
   render () {
     const {inputLimits: [minWords, maxWords]} = this.props
@@ -81,8 +86,10 @@ export default class Header extends React.Component {
               textArea
               name='wordsInput'
               className={cls('input')}
-              placeHolder={<TypeWriter/>}
-              validations={{minWords, maxWords}}
+              validations={{minWords, maxWords, noNumbers: true}}
+              validationError={{
+                noNumbers: this._hasNumbersAlert(),
+              }}
             />
           </InputCard>
         </Formsy.Form>
