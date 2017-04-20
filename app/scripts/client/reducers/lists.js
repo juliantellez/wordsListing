@@ -7,9 +7,6 @@ class Lists extends I.Record({
   List: '',
 }) {}
 
-const content = content => {
-  content.replace(/([^a-zA-Z0-9 .,])/g, '')
-}
 const setLists = ({content}) => {
   return new Lists({content})
 }

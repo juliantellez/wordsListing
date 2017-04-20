@@ -25,14 +25,23 @@ describe('FORMATTER:', () => {
     const entry = formatter.IGNORE_SPECIAL_CHARS(string)
     expect(entry).to.equal(expected)
   })
-  it('FILTER', () => {
+  it('FORMAT_VALUE', () => {
     const string = (
       `string!@#$!@# without *&^%@!special@#$^$^) chars(),      
       ™£∞§§¶¶–ºª•¶§multipl dots, &(&)*):commas or spaces....."{}`
     )
     const expected = 'string without special chars, multipl dots, commas or spaces.'
-    const entry = formatter.FILTER(string)
+    const entry = formatter.FORMAT_VALUE(string)
     expect(entry).to.equal(expected)
+  })
+  it('FILTER_WORDS', () => {
+    const string = (
+      `string!@#$!@# without *&^%@!special@#$^$^) chars(),      
+      ™£∞§§¶¶–ºª•¶§multipl dots, &(&)*):commas or spaces....."{}`
+    )
+    const expected = 9
+    const entry = formatter.FILTER_WORDS(string)
+    expect(entry.length).to.equal(expected)
   })
   it('ESCAPE_NON_GRAMMATICAL_COMMAS', () => {
     const string = 'commas floating about, ,,, ,,,  ,here, , and, , there ,,,'
