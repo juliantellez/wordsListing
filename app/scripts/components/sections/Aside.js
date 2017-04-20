@@ -19,7 +19,7 @@ export default class Aside extends React.Component {
 
   updateState = () => {
     const {tally, error} = this.context.store.getState()
-    this.setState({tally, error})
+    _.defer(() => this.setState({tally, error}))
   }
 
   componentWillMount () {

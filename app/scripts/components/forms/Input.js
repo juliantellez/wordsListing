@@ -1,4 +1,3 @@
-import _ from 'lodash'
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
@@ -11,10 +10,7 @@ class Input extends React.Component {
     setValue: PropTypes.func,
     getValue: PropTypes.func,
     textArea: PropTypes.bool,
-    showError: PropTypes.func,
     placeHolder: PropTypes.node,
-    isFormSubmitted: PropTypes.func,
-    validationError: PropTypes.string,
     name: PropTypes.string.isRequired,
   }
 
@@ -39,13 +35,6 @@ class Input extends React.Component {
     })
   }
 
-  _shouldShowErrors () {
-    return (
-      this.props.isFormSubmitted() &&
-      this.props.showError()
-    )
-  }
-
   _getPlaceHolder () {
     const length = this._getValue().length
     if (length > 0) {
@@ -54,22 +43,6 @@ class Input extends React.Component {
     return (
       <div className={cls('placeholder')}>
         {this.props.placeHolder}
-      </div>
-    )
-  }
-
-  _getErrors () {
-    if (!this._shouldShowErrors()) {
-      return null
-    }
-    const {validationError} = this.props
-    let error = 'This field is invalid'
-    if (typeof validationError === 'string') {
-      error = validationError
-    }
-    return (
-      <div className={cls('error')}>
-        {error}
       </div>
     )
   }
@@ -83,7 +56,6 @@ class Input extends React.Component {
       <div className={className} >
         {this._getPlaceHolder()}
         {this._getInput()}
-        {this._getErrors()}
       </div>
     )
   }
