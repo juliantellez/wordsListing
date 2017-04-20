@@ -57,7 +57,6 @@ export default class Aside extends React.Component {
   _getContent () {
     const {error} = this.state
     if (!_.isEmpty(error)) {
-      console.log(error.content)
       return <ErrorCard error={error.content} />
     }
     return this._getWordsTally()

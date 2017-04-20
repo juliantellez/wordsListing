@@ -3,12 +3,12 @@ import Formsy from 'formsy-react'
 
 function minWords (values, value, min) {
   const length = wordsLength(value)
-  return length > min
+  return length >= min
 }
 
 function maxWords (values, value, max) {
   const length = wordsLength(value)
-  return length < max
+  return length <= max
 }
 
 function noNumbers (values, value) {

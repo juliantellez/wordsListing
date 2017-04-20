@@ -33,6 +33,7 @@ export default class Header extends React.Component {
     const {store, actions} = this.context
     const {wordsInput} = this.state
     store.dispatch(actions.error.removeError())
+    store.dispatch(actions.lists.setLists(wordsInput))
     store.dispatch(actions.tally.setCounters(wordsInput))
   }
 
@@ -40,7 +41,7 @@ export default class Header extends React.Component {
     const {inputLimits: [minLength, maxLength]} = this.props
     const length = this._getWordsLength()
     let error
-    if (length <= minLength) {
+    if (length < minLength) {
       error = `Please insert a min of ${minLength} words`
     } else if (length > maxLength) {
       error = `You have reached the maximum limit of ${maxLength} words`
