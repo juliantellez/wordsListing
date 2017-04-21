@@ -1,7 +1,7 @@
 import _ from 'lodash'
 import WordsMap from 'src/client/reducers/definitions/WordsMap'
 
-describe.only('WordsMap', () => {
+describe('WordsMap', () => {
   it('creates Map and sorts', () => {
     const list = ['i', 'am', 'a', 'list']
     const wordsMap = new WordsMap(list)

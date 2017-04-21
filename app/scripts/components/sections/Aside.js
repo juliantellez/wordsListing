@@ -33,7 +33,7 @@ export default class Aside extends React.Component {
 
   _getBox (label, content) {
     return (
-      <Box className={cls('box')} inline>
+      <Box className={cls('box')}>
         <span className={cls('box-label')}>{label}</span>
         <span className={cls('box-content')}>{content}</span>
       </Box>

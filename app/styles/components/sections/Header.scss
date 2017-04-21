@@ -1,4 +1,7 @@
 .Header {
+  @include media(desktop) {
+    margin-right: 10px;
+  }
   &-title {
     margin: 20px 0;
     font-size: 30px;

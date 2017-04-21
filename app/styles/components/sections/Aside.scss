@@ -1,12 +1,25 @@
 .Aside {
+  width: 100%;
   padding: 20px 5px;
+  display: inline-block;
   @include media(desktop) {
     padding: 20px 0;
   }
   &-box {
-    display: block;
+    width: 100%;
+    text-align: center;
+    color: $color-blue-navy;
     @include media(desktop) {
-      display: initial;
+      width: 310px;
+      margin-right: 10px;
+      float: left;
+      text-align: center;
+    }
+    &-label {
+      font-weight: 700;
+    }
+    &-content {
+      padding: 0 5px;
     }
   }
 }

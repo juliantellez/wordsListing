@@ -21,6 +21,7 @@ const FILTER_WORDS = value =>
   .trim()
   .split(' ')
   .filter(w => w.match(/\w/i)) // Match words only
+  .filter(w => w.length > 1 || w.match(/[ia]/i)) // allow standalone letters
   .map(w => w.replace(/[^\w]/g, '')) // Allow words only
 
 export default {

@@ -18,8 +18,8 @@ export default class Content extends React.Component {
   shouldComponentUpdate = shouldComponentUpdate.bind(this)
 
   updateState = () => {
-    const {lists} = this.context.store.getState()
-    _.defer(() => this.setState({lists}))
+    const {lists, error} = this.context.store.getState()
+    _.defer(() => this.setState({lists, error}))
   }
 
   componentWillMount () {
@@ -59,8 +59,8 @@ export default class Content extends React.Component {
   }
 
   _canRender = () => {
-    const {lists} = this.state
-    return !_.isNil(lists)
+    const {lists, error} = this.state
+    return !_.isNil(lists) && _.isEmpty(error)
   }
 
   render () {
@@ -69,9 +69,7 @@ export default class Content extends React.Component {
     }
     return (
       <div className='Content'>
-        <div className={cls('wrapper')}>
         {this._getCards()}
-        </div>
       </div>
     )
   }
