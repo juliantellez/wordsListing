@@ -8,7 +8,6 @@ import WordsMap from './definitions/WordsMap'
 
 const setLists = ({content}, prevState) => {
   const list = formatters.FILTER_WORDS(content)
-  console.log(new WordsMap(list))
   return new WordsMap(list)
 }
 
