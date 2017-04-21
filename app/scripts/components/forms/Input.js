@@ -37,11 +37,12 @@ class Input extends React.Component {
 
   _getPlaceHolder () {
     const length = this._getValue().length
+    let display = 'block'
     if (length > 0) {
-      return null
+      display = 'none'
     }
     return (
-      <div className={cls('placeholder')}>
+      <div className={cls('placeholder')} style={{display}}>
         {this.props.placeHolder}
       </div>
     )
