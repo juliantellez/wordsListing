@@ -3,4 +3,10 @@
   @include media(desktop) {
     padding: 20px 0;
   }
+  &-box {
+    display: block;
+    @include media(desktop) {
+      display: initial;
+    }
+  }
 }

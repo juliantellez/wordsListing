@@ -18,8 +18,8 @@ export default class Header extends React.Component {
   }
 
   static contextTypes = {
-    store: React.PropTypes.object,
-    actions: React.PropTypes.object,
+    store: PropTypes.object,
+    actions: PropTypes.object,
   }
 
   state = {}
