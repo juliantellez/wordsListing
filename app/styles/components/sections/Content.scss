@@ -10,9 +10,8 @@
       height: 320px;
     }
     @include media (desktop) {
-      $size: 230px;
-      width: $size;
-      height: $size;
+      width: 230px;
+      height: 240px;
     }
     float: left;
     margin: 10px;

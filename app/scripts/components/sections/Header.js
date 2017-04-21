@@ -87,6 +87,7 @@ export default class Header extends React.Component {
               textArea
               name='wordsInput'
               className={cls('input')}
+              placeHolder={<TypeWriter />}
               validations={{minWords, maxWords, noNumbers: true}}
               validationError={{
                 noNumbers: this._hasNumbersAlert(),
