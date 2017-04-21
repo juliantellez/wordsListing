@@ -1,4 +1,3 @@
-import I from 'immutable'
 import {
   SET_COUNTERS,
   REMOVE_COUNTERS,
@@ -9,12 +8,7 @@ import {
   commasLength,
   fullStopsLength,
 } from 'src/utils/tally'
-
-class Counters extends I.Record({
-  words: 0,
-  commas: 0,
-  fullStops: 0,
-}) {}
+import Counters from './definitions/Counters'
 
 const setCounters = ({content}) => {
   return new Counters({
