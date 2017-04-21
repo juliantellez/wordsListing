@@ -1,0 +1,43 @@
+.Content {
+  margin: 0 auto;
+  
+  &-card {
+    $size: 300px;
+    width: $size;
+    height: $size;
+    @include media (tablet) {
+      width: 177px;
+      height: 320px;
+    }
+    @include media (desktop) {
+      $size: 230px;
+      width: $size;
+      height: $size;
+    }
+    float: left;
+    margin: 10px;
+    margin-left: 0;
+    overflow: scroll;
+    &-title {
+      padding: 5px;
+      font-size: 20px;
+      font-weight: 700;
+      text-align: center;
+      color: $color-blue-navy;
+      text-transform: capitalize;
+    }
+    &-label {
+      color: $color-gray;
+      font-size: 12px;
+      padding: 0 5px;
+    }
+    &-section {
+      padding: 10px;
+      color: $color-blue-navy;
+      border-top: 1px solid $color-gray;
+      &:nth-child(odd) {
+        background-color: $color-blue-light;
+      }
+    }
+  }
+}
