@@ -15,7 +15,7 @@ describe('tally', () => {
   })
   it('wordsLength', () => {
     const entry = 'asdferg.. adf .HLKHHKLHHLKHJ. .^&%$#,,,,. .a. .asdf. . .asdf. .asd.  d'
-    const expected = 8
+    const expected = 7
     const wordsLength = tally.wordsLength(entry)
     expect(wordsLength).to.equal(expected)
   })
