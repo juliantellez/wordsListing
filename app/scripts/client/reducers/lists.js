@@ -1,19 +1,21 @@
-import I from 'immutable'
 import {
   SET_LISTS,
+  REMOVE_LISTS,
 } from '../actions/lists'
 
-class Lists extends I.Record({
-  List: '',
-}) {}
+import formatters from 'src/utils/formatters'
+import WordsMap from './definitions/WordsMap'
 
-const setLists = ({content}) => {
-  return new Lists({content})
+const setLists = ({content}, prevState) => {
+  const list = formatters.FILTER_WORDS(content)
+  console.log(new WordsMap(list))
+  return new WordsMap(list)
 }
 
-export default (state = new Lists(), action) => {
+export default (state = new WordsMap(), action) => {
   switch (action.type) {
     case SET_LISTS: return setLists(action)
-    default: return {}
+    case REMOVE_LISTS: return {}
+    default: return state
   }
 }

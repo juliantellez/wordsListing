@@ -1,13 +1,8 @@
-import I from 'immutable'
 import {
   SET_ERROR,
   REMOVE_ERROR,
 } from '../actions/error'
-
-class _Error extends I.Record({
-  content: '',
-}) {}
-
+import _Error from './definitions/Error'
 const setError = ({content}) => new _Error({content})
 
 export default (state, action) => {
